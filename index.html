@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Utama</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e3f2fd; /* Light blue background */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+        .header {
+            background-color: #1e3d59;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .footer {
+            background-color: #1e3d59;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .media-section {
+            margin-bottom: 30px;
+        }
+        .media-section h3 {
+            margin-bottom: 15px;
+        }
+        .media-section p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Ini Mendeskripsikan Tentang Bus yang Saya Ketahui</h1>
+            <p>Penasaran? Lihatlah data berikut INI.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 text-center media-section">
+                <h3>Audio</h3>
+                <audio controls>
+                    <source src="klakson-telolet-indonesian-big-bus-custom-horn-31303.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Audio ini berisi suara klakson yang ada di bus yang ada di Indonesia.</p>
+            </div>
+            <div class="col-md-4 text-center media-section">
+                <h3>Video</h3>
+                <video width="100%" controls>
+                    <source src="Download.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video ini menampilkan beberapa bus yang ada di Indonesia.</p>
+            </div>
+            <div class="col-md-4 text-center media-section">
+                <h3>Gambar</h3>
+                <img src="download.jpg" alt="Bus" class="img-fluid rounded">
+                <p>Gambar ini menampilkan bus yang melayani rute panjang.</p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="survey.html" class="btn btn-primary">Mulai Survey</a>
+        </div>
+        
+        <div class="footer mt-5">
+            <p>2024 YogiDewanto2022014023A</p>
+            <p id="time"></p>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var timeString = now.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+            document.getElementById('time').textContent = 'Current Time: ' + timeString;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();  // Initial call to set the time immediately on load
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

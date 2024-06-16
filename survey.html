@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e3f2fd; /* Light blue background */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+        }
+        .header, .footer {
+            background-color: #1e3d59;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .footer {
+            margin-top: 30px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+        .form-section h2 {
+            margin-bottom: 20px;
+        }
+        .result-section {
+            margin-top: 30px;
+        }
+        .result-section h2 {
+            margin-bottom: 20px;
+        }
+        .image-section {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Survey Bus</h1>
+        </div>
+
+        <form id="surveyForm" class="form-section">
+            <h2 class="text-center">Isi Survey</h2>
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Pilih Tanggal:</label>
+                <input type="date" class="form-control" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Pilih Jurusan:</label>
+                <select class="form-control" id="location" required>
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="Bandung">Bandung</option>
+                    <option value="Pati">Pati</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="class">Pilih Rute:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="class" id="patas" value="Patas" required>
+                    <label class="form-check-label" for="patas">Patas</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="class" id="ekonomi" value="Ekonomi" required>
+                    <label class="form-check-label" for="ekonomi">Ekonomi</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="class" id="pariwisata" value="Pariwisata" required>
+                    <label class="form-check-label" for="pariwisata">Pariwisata</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+
+        <div id="result" class="result-section">
+            <h2 class="text-center">Hasil Survey</h2>
+            <p id="resultName"></p>
+            <p id="resultDate"></p>
+            <p id="resultLocation"></p>
+            <p id="resultClass"></p>
+        </div>
+
+        <div class="row image-section">
+            <div class="col-md-6">
+                <img src="images.jpg" alt="Foto 1" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <img src="screenshot_20230621-140618_insta-20230621021000.jpg" alt="Foto 2" class="img-fluid rounded">
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>2024 YogiDewanto2022014023A</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var date = document.getElementById('date').value;
+            var location = document.getElementById('location').value;
+            var classValue = document.querySelector('input[name="class"]:checked').value;
+
+            document.getElementById('resultName').innerText = "Nama: " + name;
+            document.getElementById('resultDate').innerText = "Tanggal: " + date;
+            document.getElementById('resultLocation').innerText = "Jurusan: " + location;
+            document.getElementById('resultClass').innerText = "Kelas: " + classValue;
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
